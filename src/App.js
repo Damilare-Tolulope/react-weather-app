@@ -17,14 +17,12 @@ const App = () => {
     const fetchData = async () => {
       const WEATHER_API_URL = "https://api.openweathermap.org/data/2.5";
       const WEATHER_API_KEY = "0b2033d66a162875c0f3cf4e0f70b20f";
-      console.log(WEATHER_API_KEY, WEATHER_API_URL);
 
       await fetch(
         `${WEATHER_API_URL}/weather/?q=${city}&units=metric&APPID=${WEATHER_API_KEY}`
       )
         .then((res) => res.json())
         .then((result) => {
-          console.log(result);
           setData(result);
           setLoading(false);
         })
@@ -35,8 +33,6 @@ const App = () => {
 
   return (
     <div className="App">
-      {console.log(data)}
-
       <Search searchText={searchText} />
       {typeof data.main != undefined ? (
         loading ? (

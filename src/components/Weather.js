@@ -6,10 +6,6 @@ const Weather = ({ weatherData }) => {
     (weatherData.sys.sunrise + weatherData.timezone) * 1000
   );
   console.log(sunrise);
-  // console.log(new Date(weatherData.dt*1000))
-  // console.log(weatherData.timezone*1000)
-  // console.log(new Date(weatherData.dt*1000-(weatherData.timezone*1000))); // minu``s
-  // console.log(new Date(weatherData.dt*1000+(weatherData.timezone*1000))); // plus``
 
   return (
     <div className="weather-page">
